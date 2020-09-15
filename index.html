@@ -2,65 +2,76 @@
 
     <head>
         <meta charset="utf-8">
+        <link href="D:/Notes/Web Development/fontawesome-free-5.14.0-web/css/fontawesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calculator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheet.css">
     </head>
-    <body>
-        <div class="jumbotron">
-        </div>
-    <div class="calcContainer"  >
-        <table class="calcContainer">
-       <tr style="padding:0px" class="topRow">
-           <td colspan="4">
-        <!-- <input class="" style="padding:0px,border:0px" type="text" name="" value="Jai Parmani" > -->
-        <p>Jai Parmani</p>
-    </td>
-    <td>
-        <input class="" type="button" value="C" onclick="CLEAR()"></td>
-    </tr>
+    <body class="body-dark-mode" id="body">
+        
+        <!-- <div class="jumbotron"> -->
+            <!-- </div> -->
+            <div class="calcContainer"  id="calcWrapper">
+                    <table class="calcContainer" id="calcTable" >
+                    <tr style="padding:0px" class="topRow">
+                        <td colspan="3">
+                            <p>Jai Parmani</p>
+                        </td>
+                        <!-- <td colspan="1"><i class="fab fa-git"></i></td> -->
+                        <td colspan="1">
+                            <button class="darkModeButton"  id="button" onclick="darkModeToggle()"><i  class="fas fa-adjust"></i></button>
+                            
+                            <td colspan="1">
+                                <input type="button" class="dark-mode-button" id="button" onclick="CLEAR()" value="C">
+                            </td>
+            
+        </tr>
     
     
        <tr>
-        <td><input class="rowOfOutput" type="text" id="val1" value="0"></td>
-        <td><input class="rowOfOutput" type="text" id="operatorInput" value=""></td>
-        <td><input class="rowOfOutput" type="text" id="val2" value="0"></td>
-        <td><input class="rowOfOutput" type="button" value="=" onclick="displayOutput()" ></td>
-        <td><input class="rowOfOutput" type="text" id="result"></td>
+        <td  class="calcContents"><input class="rowOfOutput" type="text" value="0" id="val1" ></td>
+        <td  class="calcContents"><input class="rowOfOutput" type="text"  value=" " id="operatorInput"></td>
+        <td  class="calcContents"><input class="rowOfOutput" type="text"  value="0" id="val2"></td>
+        <td  class="calcContents"><input class="dark-mode-button" type="button" id="button"  onclick="displayOutput()" value="=" ></td>
+        <td  class="calcContents"><input class="rowOfOutput" value="" type="text" id="result"></td>
       
         </tr>
         
        <tr>
-        <td><input type="button" onclick="operatorPressed(this.value)" value="+"  style="background:#a5a5a5; color:black;"></td>
-        <td><input type="button" onclick="operatorPressed(this.value)" value="-"  style="background:#a5a5a5; color:black;"></td>
-        <td><input type="button" onclick="operatorPressed(this.value)" value="*"  style="background:#a5a5a5; color:black;"></td>
-        <td><input type="button" onclick="operatorPressed(this.value)" value="/"  style="background:#a5a5a5; color:black;"></td>
-        <td><input type="button" onclick="operatorPressed(this.value)" value="%"  style="background:#fe9505"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button grey-button" id="button" onclick="operatorPressed(this.value)" value="+" ></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button grey-button" id="button"  onclick="operatorPressed(this.value)" value="-" ></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button grey-button" id="button" onclick="operatorPressed(this.value)" value="*" ></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button grey-button" id="button" onclick="operatorPressed(this.value)" value="/" ></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button yellow-button" id="button" onclick="operatorPressed(this.value)" value="%"></td>
         </tr>
         
        <tr>
-        <td><input type="button" onclick="valuePressed(this.value)" value="9"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="8"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="7"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="6"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="5"  style="background:#fe9505"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="9"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="8"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="7"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="6"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button  yellow-button" id="button" onclick="valuePressed(this.value)" value="5"></td>
         </tr>
         
        <tr>
-        <td><input type="button" onclick="valuePressed(this.value)" value="4"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="3"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="2"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="1"></td>
-        <td><input type="button" onclick="valuePressed(this.value)" value="0" style="background:#fe9505"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="4"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="3"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="2"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button" id="button" onclick="valuePressed(this.value)" value="1"></td>
+        <td  class="calcContents"><input type="button" class="dark-mode-button  yellow-button" id="button" onclick="valuePressed(this.value)" value="0"></td>
     </tr>    
 </table>
     </div>
         <script >
             function valuePressed(a){
+                 
+                var operator=document.getElementById("operatorInput").value
             console.log(a)
-            if(document.getElementById("operatorInput").value=="")
+            if( operator==" ")
             {
                 let val = document.getElementById("val1").value;
                 val=parseInt(val)*10+parseInt(a);
@@ -87,12 +98,45 @@
             }
             function CLEAR(){
                 document.getElementById("val1").value=0
-                document.getElementById("operatorInput").value=''
+                document.getElementById("operatorInput").value=' '
                 document.getElementById("val2").value=0
                 document.getElementById("result").value=''
 
             
             }
-        </script>
+            function darkModeToggle(){
+                var body=document.getElementById ("body");
+                body.classList.toggle("body-light-mode")
+                console.log(body)
+        var calcTable=document.querySelector("#calcTable")
+        calcTable.classList.toggle("table-light-mode")
+        
+        var textInput=document.querySelectorAll(".rowOfOutput")
+        for(let i in textInput){
+            try{
+                textInput[i].classList.toggle("text-light-mode")
+                // console.log(textInput[i])
+            }
+            catch(Exception ){
+                // console.log(textInput[i])
+                continue;
+
+            }
+    }
+        
+        var contents=document.querySelectorAll("#button")
+        for(let i in contents){
+        // console.log(contents[i] )
+        try{
+        contents[i].classList.toggle("button-dark-mode")
+    }
+catch(Exception){}}
+        
+}    </script>
+            <script
+            src="https://kit.fontawesome.com/0aa24595f8.js"
+            crossorigin="anonymous"
+          ></script>
+      
     </body>
 </html>

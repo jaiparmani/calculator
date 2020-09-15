@@ -83,7 +83,7 @@ input {
 .button:hover span {
   /* padding-right: 25px; */
 }
-input[type="button"] {
+.dark-mode-button {
   border-radius: 50%;
   background-color: #333333;
   height: 90%;
@@ -107,6 +107,14 @@ input[type="button"] {
   cursor: pointer;
   margin: 5px;
 }
+.grey-button {
+  background: #a5a5a5;
+  color: black;
+}
+.yellow-button {
+  background: #fe9505;
+}
+
 input[type="button"]:hover {
   content: "\00bb";
   cursor: pointer;
@@ -127,4 +135,53 @@ input[type="text"] {
   display: inline-block;
   position: relative;
   transition: 0.5s;
+}
+
+button {
+  background: black;
+  color: white;
+
+  /* margin-left: 30%; */
+  height: 60%;
+  width: 40%;
+  /* margin-right:auto; */
+  font-size: xx-large;
+  border: 0px;
+  border-radius: 50%;
+  background-color: #333333;
+  height: 90%;
+  width: 65%;
+}
+button:hover {
+  content: "\00bb";
+  cursor: pointer;
+}
+
+/* dark mode */
+.wrapper-dark-mode {
+  /* background-color: white; */
+  color: white;
+}
+
+.button-dark-mode {
+  background: #f1f3f8;
+  color: #393b44;
+  border: 1px solid #393b44;
+}
+
+table.table-light-mode {
+  background-color: #d6e0f0;
+  color: #393b44;
+  border: 1px solid #145374;
+}
+p.table-dark-mode {
+}
+
+.body-light-mode {
+  background: white;
+}
+input.text-light-mode {
+  background: #f1f3f8;
+  color: #393b44;
+  border: 1px solid #393b44;
 }

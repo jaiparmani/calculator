@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <title>Calculatpr</title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div style="position: relative">
+      <input type="text" name="num1" id="num1" value="" />
+      <br />
+      <input type="text" name="num2" id="num2" value="" />
+      <br />
+      <button style="position: absolute" onclick="multiply()">Multiply</button>
+      <br />
+      <input type="text" name="output" id="output" value="" />
+    </div>
+    <script>
+      function multiply() {
+        // console.log("CALLED MULTIPLY");
+        num1 = document.getElementById("num1").value;
+        num2 = document.getElementById("num2").value;
+        document.getElementById("output").value = num1 * num2;
+
+        console.log(num1);
+      }
+    </script>
+  </body>
+</html>
